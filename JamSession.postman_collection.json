@@ -1,0 +1,156 @@
+{
+	"info": {
+		"_postman_id": "b57a60b5-0d6c-431a-a924-213cecf8cc25",
+		"name": "JamSession",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create User Profile",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userName\":\"abc2@gmail.com\",\n\t\"firstName\":\"bhuvin\",\n\t\"lastName\": \"thakker\",\n\t\"password\": \"User@123\",\n\t\"jamRole\":\"Guitarist\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Jam",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"jamSong\":{\n\"notes\": \"Play the song\",\n\"name\": \"Guitar theme\",\n\"songRoles\": [{\n\"role\": \"Guitarist\",\n\"isRequired\": true\n}]\n},\n\"jamCreatorUserId\": \"01EE96Y6NG9HKVPNZJY5R5PZ7B\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/jams",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"jams"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Start Jam",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"jamId\": \"01EE97MXFHNY14B4FBJ6V6B0PN\",\n\t\"userId\":\"01EE96Y6NG9HKVPNZJY5R5PZ7B\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/jams/start",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"jams",
+						"start"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Assign User To a Role",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"jamId\": \"01EE97MXFHNY14B4FBJ6V6B0PN\",\n\t\"userId\":\"01EE96Y6NG9HKVPNZJY5R5PZ7B\",\n\t\"role\": \"Guitarist\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/jams/assignUserToRole",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"jams",
+						"assignUserToRole"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
