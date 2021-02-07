@@ -58,8 +58,6 @@ export default class UserProfileEntity {
   public jamRole: string[];
 
   public contactNumber: string = '030 303030';
-
-  public schemaVersion: number = AppConfig.currentUserSchemaVersion;
 }
 
 ```
